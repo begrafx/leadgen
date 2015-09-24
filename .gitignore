@@ -1,5 +1,6 @@
 # Ignore profile modules, libraries and themes
 modules/*
+!modules/leadgen
 themes/*
 libraries/*
 .DS_Store
