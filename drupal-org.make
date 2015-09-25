@@ -39,3 +39,17 @@ projects[panopoly_search][subdir] = panopoly
 
 projects[panopoly_test][version] = 1.27
 projects[panopoly_test][subdir] = panopoly
+
+; LeadGen Modules
+
+projects[colorfield][version] = 1.1
+projects[colorfield][subdir] = contrib
+
+projects[radix][version] = 3.x-dev
+projects[radix][subdir] = contrib
+projects[radix][download][type] = git
+projects[radix][download][revision] = 44667df
+projects[radix][download][branch] = 7.x-3.x
+
+projects[view_mode_templates][version] = 1.0
+projects[view_mode_templates][subdir] = contrib

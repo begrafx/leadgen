@@ -20,15 +20,17 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-md-8 radix-layouts-content panel-panel">
-      <div class="panel-panel-inner">
-        <?php print $content['contentmain']; ?>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 radix-layouts-content panel-panel">
+        <div class="panel-panel-inner">
+          <?php print $content['contentmain']; ?>
+        </div>
       </div>
-    </div>
-    <div class="col-md-4 radix-layouts-sidebar panel-panel">
-      <div class="panel-panel-inner">
-        <?php print $content['sidebar']; ?>
+      <div class="col-md-4 radix-layouts-sidebar panel-panel">
+        <div class="panel-panel-inner">
+          <?php print $content['sidebar']; ?>
+        </div>
       </div>
     </div>
   </div>
