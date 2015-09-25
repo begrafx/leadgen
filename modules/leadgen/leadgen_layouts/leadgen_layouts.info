@@ -1,0 +1,5 @@
+name = LeadGen Layouts
+description = Provides layouts for LeadGen distro.
+core = 7.x
+package = LeadGen
+dependencies[] = panels
