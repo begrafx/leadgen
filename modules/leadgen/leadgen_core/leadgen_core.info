@@ -1,0 +1,7 @@
+name = LeadGen Core
+core = 7.x
+package = LeadGen
+dependencies[] = defaultconfig
+features[defaultconfig][] = strongarm:admin_theme
+features[features_api][] = api:2
+project path = profiles/leadgen/modules/leadgen

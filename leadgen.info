@@ -48,3 +48,8 @@ dependencies[] = views_ui
 dependencies[] = devel
 dependencies[] = distro_update
 dependencies[] = uuid
+
+; LeadGen Toolset
+dependencies[] = leadgen_core
+dependencies[] = leadgen_layouts
+dependencies[] = leadgen_widgets
