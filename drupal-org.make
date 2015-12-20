@@ -1,55 +1,13 @@
 api = 2
-core = 7.x
+core = 8.x
 
-; The Panopoly Foundation
+defaults[projects][subdir] = "contrib"
 
-projects[panopoly_core][version] = 1.27
-projects[panopoly_core][subdir] = panopoly
+; Modules
 
-projects[panopoly_images][version] = 1.27
-projects[panopoly_images][subdir] = panopoly
+projects[entity_reference_revisions][version] = '1.0-rc4'
+projects[paragraphs][version] = '1.0-rc4'
 
-projects[panopoly_theme][version] = 1.27
-projects[panopoly_theme][subdir] = panopoly
+; Themes
 
-projects[panopoly_magic][version] = 1.27
-projects[panopoly_magic][subdir] = panopoly
-
-projects[panopoly_widgets][version] = 1.27
-projects[panopoly_widgets][subdir] = panopoly
-
-projects[panopoly_admin][version] = 1.27
-projects[panopoly_admin][subdir] = panopoly
-
-projects[panopoly_users][version] = 1.27
-projects[panopoly_users][subdir] = panopoly
-
-; The Panopoly Toolset
-
-projects[panopoly_pages][version] = 1.27
-projects[panopoly_pages][subdir] = panopoly
-
-projects[panopoly_wysiwyg][version] = 1.27
-projects[panopoly_wysiwyg][subdir] = panopoly
-
-projects[panopoly_search][version] = 1.27
-projects[panopoly_search][subdir] = panopoly
-
-; For running the automated tests.
-
-projects[panopoly_test][version] = 1.27
-projects[panopoly_test][subdir] = panopoly
-
-; LeadGen Modules
-
-projects[colorfield][version] = 1.1
-projects[colorfield][subdir] = contrib
-
-projects[radix][version] = 3.x-dev
-projects[radix][subdir] = contrib
-projects[radix][download][type] = git
-projects[radix][download][revision] = 44667df
-projects[radix][download][branch] = 7.x-3.x
-
-projects[view_mode_templates][version] = 1.0
-projects[view_mode_templates][subdir] = contrib
+projects[bootstrap][version] = '3.0-beta2'

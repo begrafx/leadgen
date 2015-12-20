@@ -1,5 +1,0 @@
-name = LeadGen Theme
-description = Helps with theming and provides many layouts.
-core = 7.x
-package = LeadGen
-dependencies[] = panels
