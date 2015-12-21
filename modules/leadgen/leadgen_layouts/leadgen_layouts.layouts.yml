@@ -1,0 +1,13 @@
+leadgen_layouts_fluid:
+  label: 1Col fluid
+  category: LeadGen
+  class: '\Drupal\ds\Plugin\DsLayout'
+  type: partial
+  template: templates/leadgen-layouts-fluid
+  css: NULL
+  icon: NULL
+  regions:
+    header:
+      label: Header
+    main:
+      label: Main
