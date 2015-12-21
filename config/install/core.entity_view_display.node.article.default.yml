@@ -4,11 +4,14 @@ dependencies:
   config:
     - field.field.node.article.body
     - field.field.node.article.comment
+    - field.field.node.article.field_header_paragraphs
     - field.field.node.article.field_image
+    - field.field.node.article.field_main_paragraphs
     - field.field.node.article.field_tags
     - node.type.article
   module:
     - comment
+    - entity_reference_revisions
     - image
     - text
     - user
@@ -30,6 +33,14 @@ content:
     settings:
       pager_id: 0
     third_party_settings: {  }
+  field_header_paragraphs:
+    type: entity_reference_revisions_entity_view
+    weight: 101
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
   field_image:
     type: image
     weight: -1
@@ -38,19 +49,20 @@ content:
       image_link: ''
     third_party_settings: {  }
     label: hidden
+  field_main_paragraphs:
+    type: entity_reference_revisions_entity_view
+    weight: 102
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
   field_tags:
     type: entity_reference_label
     weight: 10
     label: above
     settings:
       link: true
-    third_party_settings: {  }
-  comment:
-    label: above
-    type: comment_default
-    weight: 110
-    settings:
-      pager_id: 0
     third_party_settings: {  }
   links:
     weight: 100

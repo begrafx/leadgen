@@ -38,6 +38,9 @@ dependencies:
   - views_ui
   - tour
   - automated_cron
+  # Contrib modules
+  - entity_reference_revisions
+  - paragraphs
 themes:
   - bartik
   - seven
