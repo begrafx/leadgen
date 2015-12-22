@@ -62,6 +62,7 @@
  */
 #}
 {% set container = theme.settings.fluid_container ? 'container-fluid' : 'container' %}
+{% set fluid_container = is_fluid ? 'leadgen-fluid' : 'leadgen-none' %}
 {# Navbar #}
 {% if page.navigation %}
   {% block navbar %}
@@ -96,7 +97,7 @@
 
 {# Main #}
 {% block main %}
-  <div role="main" class="main-container {{ container }} js-quickedit-main-content">
+  <div role="main" class="main-container {{ fluid_container }} {{ container }} js-quickedit-main-content">
     <div class="row">
 
       {# Header #}

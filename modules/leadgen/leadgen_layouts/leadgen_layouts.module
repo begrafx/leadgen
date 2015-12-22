@@ -6,6 +6,12 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\ds\Ds;
+use Drupal\node\NodeInterface;
+use Drupal\layout_plugin\Layout;
+use Drupal\Component\Plugin\Exception\PluginException;
+
+const LEADGEN_LAYOUT_FLUID = 'LeadGen layouts (fluid)';
 
 /**
  * Implements hook_help().
@@ -30,4 +36,43 @@ function leadgen_layouts_theme() {
   $theme = [];
 
   return $theme;
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function leadgen_layouts_preprocess_page(&$variables) {
+  if (!empty($variables['node'])) {
+    /* @var $node \Drupal\node\NodeInterface */
+    $node = $variables['node'];
+    if (leadgen_layouts_is_fluid($node)) {
+      $variables['is_fluid'] = TRUE;
+    }
+  }
+}
+
+/**
+ * Check if current node is using the fluid layout.
+ *
+ * @param \Drupal\node\NodeInterface $node
+ * @return \Drupal\node\NodeInterface|null
+ */
+function leadgen_layouts_is_fluid(NodeInterface $node) {
+  // Make sure we're on the node page.
+  if (node_is_page($node)) {
+    $entity_display = Ds::getDisplay('node', $node->bundle(), 'full');
+    if ($entity_display && $ds_layout_settings = $entity_display->getThirdPartySetting('ds', 'layout')) {
+      try {
+        // Get layout plugin.
+        $layout = Layout::layoutPluginManager()->getDefinition($ds_layout_settings['id']);
+        if (!empty($layout['category']) && $layout['category'] == LEADGEN_LAYOUT_FLUID) {
+          return $node;
+        }
+      }
+      catch (PluginException $e) {
+        watchdog_exception('leadgen_layout', $e);
+      }
+    }
+  }
+  return NULL;
 }

@@ -1,6 +1,6 @@
 leadgen_layouts_fluid:
   label: 1Col fluid
-  category: LeadGen
+  category: LeadGen layouts (fluid)
   class: '\Drupal\ds\Plugin\DsLayout'
   type: partial
   template: templates/leadgen-layouts-fluid
