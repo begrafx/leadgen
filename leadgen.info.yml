@@ -41,6 +41,9 @@ dependencies:
   # Contrib modules
   - entity_reference_revisions
   - paragraphs
+  # Custom
+  - leadgen_layouts
+  - leadgen_widgets
 themes:
   - bartik
   - seven

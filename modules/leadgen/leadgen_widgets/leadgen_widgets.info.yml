@@ -1,0 +1,5 @@
+name: LeadGen Widgets
+type: module
+description: Ships custom paragraph types.
+core: 8.x
+package: LeadGen

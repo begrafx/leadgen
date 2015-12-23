@@ -7,7 +7,11 @@ leadgen_layouts_fluid:
   css: NULL
   icon: NULL
   regions:
-    header:
+    ds_header:
       label: Header
-    main:
+    ds_content:
+      label: Content
+    ds_main:
       label: Main
+    ds_footer:
+      label: Footer

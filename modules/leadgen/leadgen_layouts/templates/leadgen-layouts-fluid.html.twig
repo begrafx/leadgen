@@ -8,7 +8,21 @@
 
 {{ title_suffix.contextual_links }}
 
-  {{ header }}
-  {{ main }}
+  <{{ ds_header_wrapper }}{{ ds_header_attributes.addClass('group-header') }}>
+    {{ ds_header }}
+  </{{ ds_header_wrapper }}>
+
+  <{{ ds_content_wrapper }}{{ ds_content_attributes.addClass('group-content') }}>
+    {{ ds_content }}
+  </{{ ds_content_wrapper }}>
+
+  <{{ ds_main_wrapper }}{{ ds_main_attributes.addClass('group-main') }}>
+    {{ ds_main }}
+  </{{ ds_main_wrapper }}>
+
+  <{{ ds_footer_wrapper }}{{ ds_footer_attributes.addClass('group-footer') }}>
+    {{ ds_footer }}
+  </{{ ds_footer_wrapper }}>
+
 
 </{{ outer_wrapper }}>

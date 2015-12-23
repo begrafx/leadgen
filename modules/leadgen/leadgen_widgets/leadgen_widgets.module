@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @file
+ * Contains leadgen_widgets.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function leadgen_widgets_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the leadgen_widgets module.
+    case 'help.page.leadgen_widgets':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('My Awesome Module') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function leadgen_widgets_theme() {
+  $theme = [];
+
+  return $theme;
+}
