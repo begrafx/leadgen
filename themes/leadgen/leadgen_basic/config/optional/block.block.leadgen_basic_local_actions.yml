@@ -2,11 +2,11 @@ langcode: en
 status: true
 dependencies:
   theme:
-    - bartik
-id: bartik_local_actions
-theme: bartik
-region: content
-weight: -20
+    - leadgen_basic
+id: leadgen_basic_local_actions
+theme: leadgen_basic
+region: header
+weight: 20
 provider: null
 plugin: local_actions_block
 settings:

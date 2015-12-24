@@ -4,11 +4,11 @@ dependencies:
   module:
     - system
   theme:
-    - bartik
-id: bartik_powered
-theme: bartik
-region: footer_fifth
-weight: 10
+    - leadgen_basic
+id: leadgen_basic_powered
+theme: leadgen_basic
+region: footer
+weight: -10
 provider: null
 plugin: system_powered_by_block
 settings:

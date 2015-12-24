@@ -31,3 +31,16 @@ function leadgen_widgets_theme() {
 
   return $theme;
 }
+
+function leadgen_widgets_preprocess_paragraph(&$variables) {
+  $paragraph = $variables['paragraph'];
+  if ($paragraph->bundle() == 'background') {
+    if (!$paragraph->field_image->isEmpty()) {
+      $banner_image = $paragraph->field_image->entity->url();
+      $variables['attributes']['style'][] = 'background-image: url("' . $banner_image . '");';
+      $variables['attributes']['style'][] = 'background-size: cover;background-position: center center;';
+    }
+  }
+
+
+}

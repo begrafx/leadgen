@@ -4,11 +4,11 @@ dependencies:
   module:
     - system
   theme:
-    - bartik
-id: bartik_breadcrumbs
-theme: bartik
-region: breadcrumb
-weight: 0
+    - leadgen_basic
+id: leadgen_basic_breadcrumbs
+theme: leadgen_basic
+region: header
+weight: -100
 provider: null
 plugin: system_breadcrumb_block
 settings:

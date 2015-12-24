@@ -45,5 +45,5 @@ dependencies:
   - leadgen_layouts
   - leadgen_widgets
 themes:
-  - bartik
+  - leadgen_basic
   - seven

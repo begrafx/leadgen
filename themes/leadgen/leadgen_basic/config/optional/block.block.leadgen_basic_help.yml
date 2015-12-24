@@ -4,10 +4,10 @@ dependencies:
   module:
     - help
   theme:
-    - bartik
-id: bartik_help
-theme: bartik
-region: content
+    - leadgen_basic
+id: leadgen_basic_help
+theme: leadgen_basic
+region: help
 weight: -30
 provider: null
 plugin: help_block

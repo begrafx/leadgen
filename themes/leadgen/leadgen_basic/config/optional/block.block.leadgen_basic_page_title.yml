@@ -2,11 +2,11 @@ langcode: en
 status: true
 dependencies:
   theme:
-    - bartik
-id: bartik_page_title
-theme: bartik
-region: content
-weight: -50
+    - leadgen_basic
+id: leadgen_basic_page_title
+theme: leadgen_basic
+region: header
+weight: 0
 provider: null
 plugin: page_title_block
 settings:

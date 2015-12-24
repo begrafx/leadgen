@@ -6,10 +6,10 @@ dependencies:
   module:
     - system
   theme:
-    - bartik
-id: bartik_footer
-theme: bartik
-region: footer_fifth
+    - leadgen_basic
+id: leadgen_basic_footer
+theme: leadgen_basic
+region: footer
 weight: 0
 provider: null
 plugin: 'system_menu_block:footer'

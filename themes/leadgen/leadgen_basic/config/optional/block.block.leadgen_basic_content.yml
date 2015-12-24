@@ -4,9 +4,9 @@ dependencies:
   module:
     - system
   theme:
-    - bartik
-id: bartik_content
-theme: bartik
+    - leadgen_basic
+id: leadgen_basic_content
+theme: leadgen_basic
 region: content
 weight: 0
 provider: null
