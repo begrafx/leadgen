@@ -44,3 +44,12 @@ function leadgen_widgets_preprocess_paragraph(&$variables) {
 
 
 }
+
+function leadgen_widgets_preprocess_paragraph__banner(&$variables) {
+  $paragraph = $variables['paragraph'];
+  if (!$paragraph->field_banner_image->isEmpty()) {
+    $banner_image = $paragraph->field_banner_image->entity->url();
+    $variables['attributes']['style'][] = 'background-image: url("' . $banner_image . '");';
+    $variables['attributes']['style'][] = 'background-size: cover;background-position: center center;';
+  }
+}
