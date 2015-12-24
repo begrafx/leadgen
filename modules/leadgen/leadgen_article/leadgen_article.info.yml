@@ -3,7 +3,13 @@ type: module
 description: Defines Article content type.
 core: 8.x
 package: LeadGen
-
+dependencies:
+  - paragraphs
+  - field
+  - node
+  - taxonomy
+  - image
+  - leadgen_base
 config_devel:
   - core.entity_form_display.node.article.default
   - core.entity_view_display.node.article.default
@@ -14,10 +20,5 @@ config_devel:
   - field.field.node.article.field_image
   - field.field.node.article.field_main_paragraphs
   - field.field.node.article.field_tags
-  - field.storage.node.comment
-  - field.storage.node.field_header_paragraphs
-  - field.storage.node.field_image
-  - field.storage.node.field_main_paragraphs
-  - field.storage.node.field_tags
   - node.type.article
   - rdf.mapping.node.article

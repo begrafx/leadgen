@@ -1,0 +1,20 @@
+name: 'LeadGen page'
+type: module
+description: Defines Page content type.
+core: 8.x
+package: LeadGen
+dependencies:
+  - paragraphs
+  - field
+  - node
+  - leadgen_base
+config_devel:
+  - core.base_field_override.node.page.promote
+  - node.type.page
+  - core.entity_form_display.node.page.default
+  - core.entity_view_display.node.page.default
+  - core.entity_view_display.node.page.teaser
+  - field.field.node.page.body
+  - field.field.node.page.field_header_paragraphs
+  - field.field.node.page.field_main_paragraphs
+  - rdf.mapping.node.page

@@ -42,6 +42,9 @@ dependencies:
   - entity_reference_revisions
   - paragraphs
   # Custom
+  - leadgen_base
+  - leadgen_article
+  - leadgen_page
   - leadgen_layouts
   - leadgen_widgets
 themes:
