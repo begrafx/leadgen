@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @file
+ * Contains leadgen_article.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function leadgen_article_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the leadgen_article module.
+    case 'help.page.leadgen_article':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Defines Article content type.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function leadgen_article_theme() {
+  $theme = [];
+
+  return $theme;
+}
