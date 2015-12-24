@@ -5,18 +5,56 @@ dependencies:
     - field.field.paragraph.leadgen_text.field_text
     - paragraphs.paragraphs_type.leadgen_text
   module:
+    - ds
     - text
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col_wrapper
+      path: profiles/leadgen/modules/contrib/ds
+      library: ''
+      disable_css: false
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class:
+            paragraph: paragraph
+          ds_content:
+            dynamic-container: dynamic-container
+    regions:
+      ds_content:
+        - field_text
 id: paragraph.leadgen_text.default
 targetEntityType: paragraph
 bundle: leadgen_text
 mode: default
 content:
+  created:
+    type: timestamp_ago
+    weight: 0
+    label: above
+    settings:
+      future_format: '@interval hence'
+      past_format: '@interval ago'
+      granularity: 2
+    third_party_settings: {  }
   field_text:
     weight: 0
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
-hidden:
-  created: true
-  uid: true
+  uid:
+    type: entity_reference_entity_view
+    weight: 0
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+hidden: {  }

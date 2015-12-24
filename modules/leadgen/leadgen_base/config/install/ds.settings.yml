@@ -1,0 +1,9 @@
+disabled: false
+field_template: false
+ft-default: default
+ft-show-colon: false
+classes:
+  region:
+    - 'dynamic-container|Dynamic container'
+    - paragraph|Paragraph
+  field: {  }

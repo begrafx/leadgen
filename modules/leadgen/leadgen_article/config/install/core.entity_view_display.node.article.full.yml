@@ -1,0 +1,106 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.article.body
+    - field.field.node.article.comment
+    - field.field.node.article.field_header_paragraphs
+    - field.field.node.article.field_image
+    - field.field.node.article.field_main_paragraphs
+    - field.field.node.article.field_tags
+    - node.type.article
+  module:
+    - comment
+    - ds
+    - entity_reference_revisions
+    - image
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: leadgen_layouts_fluid
+      path: profiles/leadgen/modules/leadgen/leadgen_layouts
+      library: ''
+      disable_css: false
+      settings:
+        wrappers:
+          ds_header: div
+          ds_content: div
+          ds_main: div
+          ds_footer: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+          ds_header: {  }
+          ds_content:
+            dynamic-container: dynamic-container
+          ds_main: {  }
+          ds_footer: {  }
+    regions:
+      ds_header:
+        - field_header_paragraphs
+      ds_content:
+        - body
+      ds_main:
+        - field_main_paragraphs
+      ds_footer:
+        - comment
+id: node.article.full
+targetEntityType: node
+bundle: article
+mode: full
+content:
+  body:
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    label: hidden
+  comment:
+    label: hidden
+    type: comment_default
+    weight: 3
+    settings:
+      pager_id: 0
+    third_party_settings: {  }
+  field_header_paragraphs:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  field_image:
+    type: image
+    weight: 4
+    settings:
+      image_style: large
+      image_link: ''
+    third_party_settings: {  }
+    label: hidden
+  field_main_paragraphs:
+    type: entity_reference_revisions_entity_view
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  field_tags:
+    type: entity_reference_label
+    weight: 5
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+  links:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

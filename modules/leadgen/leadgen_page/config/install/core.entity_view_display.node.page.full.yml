@@ -1,0 +1,77 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.page.body
+    - field.field.node.page.field_header_paragraphs
+    - field.field.node.page.field_main_paragraphs
+    - node.type.page
+  module:
+    - ds
+    - entity_reference_revisions
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: leadgen_layouts_fluid
+      path: profiles/leadgen/modules/leadgen/leadgen_layouts
+      library: ''
+      disable_css: false
+      settings:
+        wrappers:
+          ds_header: div
+          ds_content: div
+          ds_main: div
+          ds_footer: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+          ds_header: {  }
+          ds_content:
+            dynamic-container: dynamic-container
+          ds_main: {  }
+          ds_footer: {  }
+    regions:
+      ds_header:
+        - field_header_paragraphs
+      ds_content:
+        - body
+      ds_main:
+        - field_main_paragraphs
+id: node.page.full
+targetEntityType: node
+bundle: page
+mode: full
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+  field_header_paragraphs:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+  field_main_paragraphs:
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+  links:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }
