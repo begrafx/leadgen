@@ -41,6 +41,7 @@ dependencies:
   # Contrib modules
   - entity_reference_revisions
   - paragraphs
+  - color_field
   # Custom
   - leadgen_base
   - leadgen_article
