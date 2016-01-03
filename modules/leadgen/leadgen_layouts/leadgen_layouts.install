@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for LeadGen Layouts.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function leadgen_layouts_install() {
+  $region_classes[] = 'dynamic-container|Dynamic container';
+  $region_classes[] = 'paragraph|Paragraph';
+
+  // Set region classes.
+  $ds_settings = \Drupal::configFactory()->getEditable('ds.settings');
+  $ds_settings->set('classes.region', $region_classes)->save(TRUE);
+}
