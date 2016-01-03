@@ -57,4 +57,10 @@ function leadgen_widgets_preprocess_paragraph__banner(&$variables) {
     // Hide the normal <img> tag.
     hide($variables['content']['field_banner_image']);
   }
+  // Check if banner color is empty.
+  if (!$paragraph->field_banner_color->isEmpty()) {
+    $banner_color = $paragraph->field_banner_color->getValue();
+    $banner_color = reset($banner_color);
+    $variables['attributes']['style'][] = 'background: ' . $banner_color['color'] . ';';
+  }
 }

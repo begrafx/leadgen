@@ -2,10 +2,12 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.banner.field_banner_color
     - field.field.paragraph.banner.field_banner_image
     - field.field.paragraph.banner.field_paragraphs
     - paragraphs.paragraphs_type.banner
   module:
+    - color_field
     - image
     - paragraphs
 id: paragraph.banner.default
@@ -13,6 +15,11 @@ targetEntityType: paragraph
 bundle: banner
 mode: default
 content:
+  field_banner_color:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: color_field_widget_html5
   field_banner_image:
     weight: 0
     settings:
@@ -22,7 +29,7 @@ content:
     type: image_image
   field_paragraphs:
     type: entity_reference_paragraphs
-    weight: 1
+    weight: 2
     settings:
       title: Paragraph
       title_plural: Paragraphs
