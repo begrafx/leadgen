@@ -63,4 +63,11 @@ function leadgen_widgets_preprocess_paragraph__banner(&$variables) {
     $banner_color = reset($banner_color);
     $variables['attributes']['style'][] = 'background: ' . $banner_color['color'] . ';';
   }
+
+  // Check if text color is empty.
+  if (!$paragraph->field_text_color->isEmpty()) {
+    $text_color = $paragraph->field_text_color->getValue();
+    $text_color = reset($text_color);
+    $variables['attributes']['style'][] = 'color: ' . $text_color['color'] . ';';
+  }
 }

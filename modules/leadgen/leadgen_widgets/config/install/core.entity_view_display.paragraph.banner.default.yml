@@ -5,6 +5,7 @@ dependencies:
     - field.field.paragraph.banner.field_banner_color
     - field.field.paragraph.banner.field_banner_image
     - field.field.paragraph.banner.field_paragraphs
+    - field.field.paragraph.banner.field_text_color
     - paragraphs.paragraphs_type.banner
   module:
     - entity_reference_revisions
@@ -33,4 +34,5 @@ content:
 hidden:
   created: true
   field_banner_color: true
+  field_text_color: true
   uid: true

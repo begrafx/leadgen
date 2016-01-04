@@ -2,16 +2,16 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_banner_color
+    - field.storage.paragraph.field_text_color
     - paragraphs.paragraphs_type.banner
   module:
     - color_field
-id: paragraph.banner.field_banner_color
-field_name: field_banner_color
+id: paragraph.banner.field_text_color
+field_name: field_text_color
 entity_type: paragraph
 bundle: banner
-label: 'Banner color'
-description: ''
+label: 'Text color'
+description: 'This will change the color of the text on all nested paragraphs.'
 required: false
 translatable: false
 default_value: {  }
