@@ -11,6 +11,7 @@
 function leadgen_layouts_install() {
   $region_classes[] = 'dynamic-container|Dynamic container';
   $region_classes[] = 'paragraph|Paragraph';
+  $region_classes[] = 'container|Container';
 
   // Set region classes.
   $ds_settings = \Drupal::configFactory()->getEditable('ds.settings');

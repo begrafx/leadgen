@@ -6435,8 +6435,8 @@ button.close {
 .modal-header:after,
 .modal-footer:before,
 .modal-footer:after,
-.fluid-layout .dynamic-container:before,
-.fluid-layout .dynamic-container:after {
+.fluid-layout .fluid-region .dynamic-container:before,
+.fluid-layout .fluid-region .dynamic-container:after {
   content: " ";
   display: table;
 }
@@ -6456,7 +6456,7 @@ button.close {
 .panel-body:after,
 .modal-header:after,
 .modal-footer:after,
-.fluid-layout .dynamic-container:after {
+.fluid-layout .fluid-region .dynamic-container:after {
   clear: both;
 }
 .center-block {
@@ -6754,35 +6754,35 @@ button.close {
 .field--label-inline .field--label::after {
   content: ':';
 }
-.fluid-layout .dynamic-container {
+.fluid-layout .fluid-region .dynamic-container {
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width: 768px) {
-  .fluid-layout .dynamic-container {
+  .fluid-layout .fluid-region .dynamic-container {
     width: 750px;
   }
 }
 @media (min-width: 992px) {
-  .fluid-layout .dynamic-container {
+  .fluid-layout .fluid-region .dynamic-container {
     width: 970px;
   }
 }
 @media (min-width: 1200px) {
-  .fluid-layout .dynamic-container {
+  .fluid-layout .fluid-region .dynamic-container {
     width: 1170px;
   }
 }
-.fluid-layout .dynamic-container > .navbar-header,
-.fluid-layout .dynamic-container > .navbar-collapse {
+.fluid-layout .fluid-region .dynamic-container > .navbar-header,
+.fluid-layout .fluid-region .dynamic-container > .navbar-collapse {
   margin-right: -15px;
   margin-left: -15px;
 }
 @media (min-width: 768px) {
-  .fluid-layout .dynamic-container > .navbar-header,
-  .fluid-layout .dynamic-container > .navbar-collapse {
+  .fluid-layout .fluid-region .dynamic-container > .navbar-header,
+  .fluid-layout .fluid-region .dynamic-container > .navbar-collapse {
     margin-right: 0;
     margin-left: 0;
   }

@@ -38,9 +38,10 @@ third_party_settings:
           layout_class: {  }
           ds_header: {  }
           ds_content:
-            dynamic-container: dynamic-container
+            container: container
           ds_main: {  }
-          ds_footer: {  }
+          ds_footer:
+            container: container
     regions:
       ds_header:
         - field_header_paragraphs
