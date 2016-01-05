@@ -44,6 +44,7 @@ function leadgen_widgets_preprocess_paragraph(&$variables) {
  * Implements hook_preprocess_paragraph__banner().
  */
 function leadgen_widgets_preprocess_paragraph__banner(&$variables) {
+  //@TODO Cleanup. Need to fix a better way to do this...
   $paragraph = $variables['paragraph'];
 
   // If banner image and nested paragraphs are present.
@@ -70,4 +71,50 @@ function leadgen_widgets_preprocess_paragraph__banner(&$variables) {
     $text_color = reset($text_color);
     $variables['attributes']['style'][] = 'color: ' . $text_color['color'] . ';';
   }
+}
+
+/**
+ * Implements hook_preprocess_paragraph__carousel().
+ */
+function leadgen_widgets_preprocess_paragraph__carousel(&$variables) {
+  //@TODO Cleanup. Need to fix a better way to do this...
+  $slides = [];
+
+  $paragraph = $variables['paragraph'];
+  if (!$paragraph->field_paragraphs->isEmpty()) {
+    $paragraphs = $paragraph->field_paragraphs->referencedEntities();
+    foreach ($paragraphs as $slide_paragraph) {
+
+      $item = [];
+      if (!$slide_paragraph->field_title->isEmpty()) {
+        $item['title'] = $slide_paragraph->field_title->value;
+      }
+      if (!$slide_paragraph->field_text->isEmpty()) {
+        $item['description'] = [
+          '#markup' => $slide_paragraph->field_text->value,
+        ];
+      }
+
+      if (!$slide_paragraph->field_image->isEmpty()) {
+        $image_uri = $slide_paragraph->field_image->entity->getFileUri();
+        $image = ImageStyle::load('banner')->buildUrl($image_uri);
+        $item['image'] = [
+          '#markup' => '<img src="' . $image . '" class="img-responsive" />',
+        ];
+      }
+
+      if (!empty($item)) {
+        $slides[] = $item;
+      }
+    }
+
+  }
+  if(!empty($slides)) {
+    $variables['content']['bootstrap_carousel'] = [
+      '#theme' => 'bootstrap_carousel',
+      '#slides' => $slides,
+    ];
+    hide($variables['content']['field_paragraphs']);
+  }
+
 }
