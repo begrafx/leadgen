@@ -7,6 +7,7 @@
 
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\image\Entity\ImageStyle;
+use Drupal\node\NodeInterface;
 
 /**
  * Implements hook_help().
@@ -31,6 +32,36 @@ function leadgen_widgets_theme() {
   $theme = [];
 
   return $theme;
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function leadgen_widgets_preprocess_page(&$variables) {
+  if (!empty($variables['node'])) {
+    /* @var $node \Drupal\node\NodeInterface */
+    $node = $variables['node'];
+    if (\Drupal::moduleHandler()->moduleExists('leadgen_layouts')) {
+      if (leadgen_layouts_is_fluid($node) && leadgen_widgets_has_header_paragraphs($node)) {
+        //@TODO can't do it this way. The block ID is hard-coded. Look at
+        // using hook_block_access or hook_block_view_alter.
+        hide($variables['page']['header']['leadgen_basic_page_title']);
+      }
+    }
+  }
+}
+
+/**
+ * Check if the node has the header_paragraphs field, if so, then check if the
+ * field is not empty. If header paragraphs exist hide the page title.
+ *
+ * @param \Drupal\node\NodeInterface $node
+ * @return \Drupal\node\NodeInterface
+ */
+function leadgen_widgets_has_header_paragraphs(NodeInterface $node) {
+  if(!empty($node->field_header_paragraphs) && !$node->field_header_paragraphs->isEmpty()) {
+    return $node;
+  }
 }
 
 /**
