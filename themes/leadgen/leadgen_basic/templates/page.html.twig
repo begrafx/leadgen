@@ -62,7 +62,13 @@
  */
 #}
 {% set container = theme.settings.fluid_container ? 'container-fluid' : 'container' %}
-{% set fluid_container = is_fluid ? 'leadgen-fluid' : 'container' %}
+{# If is_fluid returs TRUE, then DO NOT use .container. This class is used on the main content wrapper. #}
+{% set dynamic_container = is_fluid ? 'leadgen-fluid' : 'container' %}
+{#
+This variable should be used to center elements when is_fluid returns TRUE. Use this to center the header
+region when on a fluid page.
+ #}
+{% set fluid_container = is_fluid ? 'container' : 'col-sm-12' %}
 {# Navbar #}
 {% if page.navigation %}
   {% block navbar %}
@@ -97,13 +103,14 @@
 
 {# Main #}
 {% block main %}
-  <div role="main" class="main-container {{ fluid_container }} js-quickedit-main-content">
+  <div role="main" class="main-container {{ dynamic_container }} js-quickedit-main-content">
     <div class="row">
+
 
       {# Header #}
       {% if page.header %}
         {% block header %}
-          <div class="col-sm-12" role="heading">
+          <div class="{{ fluid_container }}" role="heading">
             {{ page.header }}
           </div>
         {% endblock %}
