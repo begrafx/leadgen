@@ -20,12 +20,12 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      leadgen_text: leadgen_text
+      text: text
     target_bundles_drag_drop:
       banner:
         weight: 3
         enabled: false
-      leadgen_text:
+      text:
         enabled: true
         weight: 4
 field_type: entity_reference_revisions

@@ -2,13 +2,13 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.leadgen_text.field_text
-    - paragraphs.paragraphs_type.leadgen_text
+    - field.field.paragraph.text.field_text
+    - paragraphs.paragraphs_type.text
   module:
     - text
-id: paragraph.leadgen_text.default
+id: paragraph.text.default
 targetEntityType: paragraph
-bundle: leadgen_text
+bundle: text
 mode: default
 content:
   field_text:

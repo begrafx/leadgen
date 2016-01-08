@@ -28,7 +28,7 @@ settings:
       carousel:
         weight: 5
         enabled: false
-      leadgen_text:
+      text:
         weight: 6
         enabled: false
       slide:
