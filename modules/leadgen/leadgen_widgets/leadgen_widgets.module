@@ -129,8 +129,9 @@ function leadgen_widgets_preprocess_paragraph__carousel(&$variables) {
       if (!$slide_paragraph->field_image->isEmpty()) {
         $image_uri = $slide_paragraph->field_image->entity->getFileUri();
         $image = ImageStyle::load('banner')->buildUrl($image_uri);
+        // TODO Should use the theme_image or whatever it's called in D8.
         $item['image'] = [
-          '#markup' => '<img src="' . $image . '" class="img-responsive" />',
+          '#markup' => '<img src="' . $image . '" class="img-responsive center-block" />',
         ];
       }
 
