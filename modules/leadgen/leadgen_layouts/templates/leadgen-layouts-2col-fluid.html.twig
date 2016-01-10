@@ -1,0 +1,36 @@
+{#
+/**
+ * @file
+ * Display Suite LeadGen 2col fluid template.
+ */
+#}
+<{{ outer_wrapper }}{{ attributes.addClass(layout_class, 'leadgen-layouts-2col-fluid', 'fluid-layout', 'clearfix') }}>
+
+{{ title_suffix.contextual_links }}
+
+  <{{ ds_header_wrapper }}{{ ds_header_attributes.addClass('group-header', 'fluid-region') }}>
+    {{ ds_header }}
+  </{{ ds_header_wrapper }}>
+
+  <div class="container">
+    <div class="row">
+      <{{ ds_content_wrapper }}{{ ds_content_attributes.addClass('group-content', 'col-md-9') }}>
+        {{ ds_content }}
+      </{{ ds_content_wrapper }}>
+
+      <{{ ds_right_sidebar_wrapper }}{{ ds_right_sidebar_attributes.addClass('group-right-sidebar', 'col-md-3') }}>
+        {{ ds_right_sidebar }}
+      </{{ ds_right_sidebar_wrapper }}>
+   </div>
+  </div>
+
+  <{{ ds_main_wrapper }}{{ ds_main_attributes.addClass('group-main', 'fluid-region') }}>
+    {{ ds_main }}
+  </{{ ds_main_wrapper }}>
+
+  <{{ ds_footer_wrapper }}{{ ds_footer_attributes.addClass('group-footer') }}>
+    {{ ds_footer }}
+  </{{ ds_footer_wrapper }}>
+
+
+</{{ outer_wrapper }}>
