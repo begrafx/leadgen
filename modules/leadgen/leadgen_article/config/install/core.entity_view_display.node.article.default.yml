@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.article.field_header_paragraphs
     - field.field.node.article.field_image
     - field.field.node.article.field_main_paragraphs
+    - field.field.node.article.field_sidebar_paragraphs
     - field.field.node.article.field_tags
     - node.type.article
   module:
@@ -52,6 +53,14 @@ content:
   field_main_paragraphs:
     type: entity_reference_revisions_entity_view
     weight: 102
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  field_sidebar_paragraphs:
+    type: entity_reference_revisions_entity_view
+    weight: 103
     label: above
     settings:
       view_mode: default

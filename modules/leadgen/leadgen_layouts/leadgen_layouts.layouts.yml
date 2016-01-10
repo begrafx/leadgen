@@ -15,3 +15,22 @@ leadgen_layouts_fluid:
       label: Main
     ds_footer:
       label: Footer
+leadgen_layouts_2col_fluid:
+  label: Two column fluid
+  category: LeadGen layouts (fluid)
+  class: '\Drupal\ds\Plugin\DsLayout'
+  type: partial
+  template: templates/leadgen-layouts-2col-fluid
+  css: NULL
+  icon: NULL
+  regions:
+    ds_header:
+      label: Header
+    ds_content:
+      label: Content
+    ds_right_sidebar:
+      label: Right sidebar
+    ds_main:
+      label: Main
+    ds_footer:
+      label: Footer
