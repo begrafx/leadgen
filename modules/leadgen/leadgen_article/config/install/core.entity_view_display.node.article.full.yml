@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.article.field_header_paragraphs
     - field.field.node.article.field_image
     - field.field.node.article.field_main_paragraphs
+    - field.field.node.article.field_sidebar_paragraphs
     - field.field.node.article.field_tags
     - node.type.article
   module:
@@ -20,7 +21,7 @@ dependencies:
 third_party_settings:
   ds:
     layout:
-      id: leadgen_layouts_fluid
+      id: leadgen_layouts_2col_fluid
       path: profiles/leadgen/modules/leadgen/leadgen_layouts
       library: ''
       disable_css: false
@@ -28,6 +29,7 @@ third_party_settings:
         wrappers:
           ds_header: div
           ds_content: div
+          ds_right_sidebar: div
           ds_main: div
           ds_footer: div
         outer_wrapper: div
@@ -37,8 +39,8 @@ third_party_settings:
         classes:
           layout_class: {  }
           ds_header: {  }
-          ds_content:
-            container: container
+          ds_content: {  }
+          ds_right_sidebar: {  }
           ds_main: {  }
           ds_footer:
             container: container
@@ -47,6 +49,8 @@ third_party_settings:
         - field_header_paragraphs
       ds_content:
         - body
+      ds_right_sidebar:
+        - field_sidebar_paragraphs
       ds_main:
         - field_main_paragraphs
       ds_footer:
@@ -65,7 +69,7 @@ content:
   comment:
     label: hidden
     type: comment_default
-    weight: 3
+    weight: 4
     settings:
       pager_id: 0
     third_party_settings: {  }
@@ -79,13 +83,21 @@ content:
     third_party_settings: {  }
   field_image:
     type: image
-    weight: 4
+    weight: 13
     settings:
       image_style: large
       image_link: ''
     third_party_settings: {  }
     label: hidden
   field_main_paragraphs:
+    type: entity_reference_revisions_entity_view
+    weight: 3
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  field_sidebar_paragraphs:
     type: entity_reference_revisions_entity_view
     weight: 2
     label: hidden
@@ -95,13 +107,13 @@ content:
     third_party_settings: {  }
   field_tags:
     type: entity_reference_label
-    weight: 5
+    weight: 14
     label: above
     settings:
       link: true
     third_party_settings: {  }
   links:
-    weight: 6
+    weight: 15
     settings: {  }
     third_party_settings: {  }
 hidden: {  }
