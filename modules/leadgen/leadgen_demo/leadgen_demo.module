@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @file
+ * Contains leadgen_demo.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function leadgen_demo_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the leadgen_demo module.
+    case 'help.page.leadgen_demo':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Module used to create demo content.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function leadgen_demo_theme() {
+  $theme = [];
+
+  return $theme;
+}

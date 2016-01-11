@@ -1,0 +1,9 @@
+name: LeadGen Demo
+type: module
+description: Module used to create demo content.
+core: 8.x
+package: LeadGen
+dependencies:
+  - leadgen_page
+  - leadgen_article
+  - leadgen_widgets
