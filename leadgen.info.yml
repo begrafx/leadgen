@@ -47,7 +47,7 @@ dependencies:
   - leadgen_article
   - leadgen_page
   - leadgen_layouts
-  - leadgen_widgets
+  - leadgen_paragraphs
 themes:
   - leadgen_basic
   - seven

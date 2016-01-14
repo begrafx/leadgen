@@ -2,47 +2,22 @@
 
 /**
  * @file
- * Contains leadgen_widgets.module.
+ * Contains leadgen_paragraphs.module..
  */
 
-use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\image\Entity\ImageStyle;
 use Drupal\node\NodeInterface;
 
 /**
- * Implements hook_help().
- */
-function leadgen_widgets_help($route_name, RouteMatchInterface $route_match) {
-  switch ($route_name) {
-    // Main module help for the leadgen_widgets module.
-    case 'help.page.leadgen_widgets':
-      $output = '';
-      $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('My Awesome Module') . '</p>';
-      return $output;
-
-    default:
-  }
-}
-
-/**
- * Implements hook_theme().
- */
-function leadgen_widgets_theme() {
-  $theme = [];
-
-  return $theme;
-}
-
-/**
  * Implements hook_preprocess_HOOK().
  */
-function leadgen_widgets_preprocess_page(&$variables) {
+function leadgen_paragraphs_preprocess_page(&$variables) {
+  // @TODO Move to theme.
   if (!empty($variables['node'])) {
     /* @var $node \Drupal\node\NodeInterface */
     $node = $variables['node'];
     if (\Drupal::moduleHandler()->moduleExists('leadgen_layouts')) {
-      if (leadgen_layouts_is_fluid($node) && leadgen_widgets_has_header_paragraphs($node)) {
+      if (leadgen_layouts_is_fluid($node) && leadgen_paragraphs_has_header_paragraphs($node)) {
         //@TODO can't do it this way. The block ID is hard-coded. Look at
         // using hook_block_access or hook_block_view_alter.
         hide($variables['page']['header']['leadgen_basic_page_title']);
@@ -58,23 +33,17 @@ function leadgen_widgets_preprocess_page(&$variables) {
  * @param \Drupal\node\NodeInterface $node
  * @return \Drupal\node\NodeInterface
  */
-function leadgen_widgets_has_header_paragraphs(NodeInterface $node) {
+function leadgen_paragraphs_has_header_paragraphs(NodeInterface $node) {
+  //@TODO Remove... This module should have NO knowledge of the node fields.
   if(!empty($node->field_header_paragraphs) && !$node->field_header_paragraphs->isEmpty()) {
     return $node;
   }
 }
 
 /**
- * Implements hook_preprocess_paragraph().
- */
-function leadgen_widgets_preprocess_paragraph(&$variables) {
-
-}
-
-/**
  * Implements hook_preprocess_paragraph__banner().
  */
-function leadgen_widgets_preprocess_paragraph__banner(&$variables) {
+function leadgen_paragraphs_preprocess_paragraph__banner(&$variables) {
   //@TODO Cleanup. Need to fix a better way to do this...
   $paragraph = $variables['paragraph'];
 
@@ -107,7 +76,7 @@ function leadgen_widgets_preprocess_paragraph__banner(&$variables) {
 /**
  * Implements hook_preprocess_paragraph__carousel().
  */
-function leadgen_widgets_preprocess_paragraph__carousel(&$variables) {
+function leadgen_paragraphs_preprocess_paragraph__carousel(&$variables) {
   //@TODO Cleanup. Need to fix a better way to do this...
   $slides = [];
 

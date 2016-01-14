@@ -6,4 +6,4 @@ package: LeadGen
 dependencies:
   - leadgen_page
   - leadgen_article
-  - leadgen_widgets
+  - leadgen_paragraphs

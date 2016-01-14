@@ -1,0 +1,7 @@
+name: LeadGen Paragraphs
+type: module
+description: Defines paragraph types for LeadGen.
+core: 8.x
+package: LeadGen
+dependencies:
+  - paragraphs
