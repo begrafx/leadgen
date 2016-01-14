@@ -48,15 +48,15 @@ function leadgen_paragraphs_preprocess_paragraph__banner(&$variables) {
   $paragraph = $variables['paragraph'];
 
   // If banner image and nested paragraphs are present.
-  if (!$paragraph->field_banner_image->isEmpty() && !$paragraph->field_paragraphs->isEmpty()) {
+  if (!$paragraph->field_image->isEmpty() && !$paragraph->field_paragraphs->isEmpty()) {
     // Get banner image.
-    $banner_image_uri = $paragraph->field_banner_image->entity->getFileUri();
+    $banner_image_uri = $paragraph->field_image->entity->getFileUri();
     $banner_image = ImageStyle::load('banner')->buildUrl($banner_image_uri);
     // Add image as background.
     $variables['attributes']['style'][] = 'background-image: url("' . $banner_image . '");';
     $variables['attributes']['style'][] = 'background-size: cover;background-position: center center;';
     // Hide the normal <img> tag.
-    hide($variables['content']['field_banner_image']);
+    hide($variables['content']['field_image']);
   }
   // Check if banner color is empty.
   if (!$paragraph->field_banner_color->isEmpty()) {

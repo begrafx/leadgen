@@ -2,15 +2,15 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_banner_image
+    - field.storage.paragraph.field_image
     - paragraphs.paragraphs_type.banner
   module:
     - image
-id: paragraph.banner.field_banner_image
-field_name: field_banner_image
+id: paragraph.banner.field_image
+field_name: field_image
 entity_type: paragraph
 bundle: banner
-label: 'Banner image'
+label: Image'
 description: ''
 required: false
 translatable: false

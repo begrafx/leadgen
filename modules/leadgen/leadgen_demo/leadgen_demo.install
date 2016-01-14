@@ -48,7 +48,7 @@ function leadgen_demo_install() {
   $para_banner_image_only = Paragraph::create([
     'type' => 'banner',
   ]);
-  $para_banner_image_only->field_banner_image->generateSampleItems();
+  $para_banner_image_only->field_image->generateSampleItems();
   $para_banner_image_only->save();
 
   // Create image banner with text paragraph.
@@ -68,7 +68,7 @@ function leadgen_demo_install() {
       ],
     ],
   ]);
-  $para_banner_image->field_banner_image->generateSampleItems();
+  $para_banner_image->field_image->generateSampleItems();
   $para_banner_image->save();
 
   // Create image banner with two text paragraph.
@@ -99,7 +99,7 @@ function leadgen_demo_install() {
       ],
     ],
   ]);
-  $para_banner_image_multi->field_banner_image->generateSampleItems();
+  $para_banner_image_multi->field_image->generateSampleItems();
   $para_banner_image_multi->save();
 
   // Add demo content with two paragraphs.

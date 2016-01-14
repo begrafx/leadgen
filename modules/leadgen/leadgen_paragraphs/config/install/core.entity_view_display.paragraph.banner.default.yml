@@ -3,7 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.banner.field_banner_color
-    - field.field.paragraph.banner.field_banner_image
+    - field.field.paragraph.banner.field_image
     - field.field.paragraph.banner.field_paragraphs
     - field.field.paragraph.banner.field_text_color
     - paragraphs.paragraphs_type.banner
@@ -15,7 +15,7 @@ targetEntityType: paragraph
 bundle: banner
 mode: default
 content:
-  field_banner_image:
+  field_image:
     type: image
     weight: 0
     label: hidden
