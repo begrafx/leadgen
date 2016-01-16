@@ -71,6 +71,17 @@ function leadgen_paragraphs_preprocess_paragraph__banner(&$variables) {
     $text_color = reset($text_color);
     $variables['attributes']['style'][] = 'color: ' . $text_color['color'] . ';';
   }
+
+  if (!$paragraph->field_paragraphs->isEmpty()) {
+    $paragraphs = $paragraph->field_paragraphs->referencedEntities();
+    if (count($paragraphs) == 1) {
+      $variables['attributes']['class'][] = 'paragraph--single-nested';
+    }
+    else {
+      $variables['attributes']['class'][] = 'paragraph--multiple-nested';
+    }
+  }
+
 }
 
 /**

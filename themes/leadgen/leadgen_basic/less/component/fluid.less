@@ -4,4 +4,17 @@
       .container();
     }
   }
+  .none-fluid-region {
+    .paragraph {
+      .field--name-field-paragraphs {
+        // Default padding for paragraphs which are not the first or last.
+        > .field--item {
+          > .paragraph {
+            padding-left: @paragraph-padding;
+            padding-right: @paragraph-padding;
+          }
+        }
+      }
+    }
+  }
 }

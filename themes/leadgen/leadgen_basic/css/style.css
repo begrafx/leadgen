@@ -6787,6 +6787,10 @@ button.close {
     margin-left: 0;
   }
 }
+.fluid-layout .none-fluid-region .paragraph .field--name-field-paragraphs > .field--item > .paragraph {
+  padding-left: 1em;
+  padding-right: 1em;
+}
 /**
  * Navbar styling.
  */
@@ -6836,14 +6840,17 @@ body.navbar-is-fixed-bottom {
 .panel-title:hover {
   text-decoration: none;
 }
-.paragraph {
+.paragraph .field--name-field-paragraphs > .field--item > .paragraph {
+  padding: 0 0 1em 0;
+}
+.paragraph .field--name-field-paragraphs > .field--item:first-child > .paragraph {
   padding: 1em 0;
 }
-.paragraph .field--name-field-paragraphs > .field--item:not(:first-child) > .paragraph {
-  padding: 1em 0 0 0;
-}
-.paragraph .field--name-field-paragraphs > .field--item:not(:last-child) > .paragraph {
+.paragraph .field--name-field-paragraphs > .field--item:last-child > .paragraph {
   padding: 0 0 1em 0;
+}
+.paragraph.paragraph--single-nested .field--name-field-paragraphs > .field--item > .paragraph {
+  padding: 1em 0;
 }
 /**
  * Toolbar module styling.

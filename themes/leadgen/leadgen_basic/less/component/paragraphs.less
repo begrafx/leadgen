@@ -1,14 +1,31 @@
 .paragraph {
-  padding: 1em 0;
   .field--name-field-paragraphs {
-    > .field--item:not(:first-child) {
+    // Default padding for paragraphs which are not the first or last.
+    > .field--item {
+    > .paragraph {
+        padding: 0 0 @paragraph-padding 0;
+      }
+    }
+    //Default padding for first paragraph.
+    > .field--item:first-child {
     >  .paragraph {
-          padding: 1em 0 0 0;
+          padding: @paragraph-padding 0;
         }
     }
-    > .field--item:not(:last-child) {
+    //Default padding for last paragraph.
+    > .field--item:last-child {
     >  .paragraph {
-        padding: 0 0 1em 0;
+        padding: 0 0 @paragraph-padding 0;
+      }
+    }
+  }
+  // Add full padding when there's only one nested paragraph.
+  &.paragraph--single-nested {
+    .field--name-field-paragraphs {
+      > .field--item {
+        > .paragraph {
+          padding: @paragraph-padding 0;
+        }
       }
     }
   }
