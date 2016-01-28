@@ -41,6 +41,18 @@ function leadgen_layouts_theme() {
 /**
  * Implements hook_preprocess_HOOK().
  */
+function leadgen_layouts_preprocess_html(&$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if (!empty($node)) {
+    if (leadgen_layouts_is_fluid($node)) {
+      $variables['is_fluid'] = TRUE;
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
 function leadgen_layouts_preprocess_page(&$variables) {
   if (!empty($variables['node'])) {
     /* @var $node \Drupal\node\NodeInterface */

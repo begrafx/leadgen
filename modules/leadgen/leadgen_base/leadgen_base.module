@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\node\NodeInterface;
 
 /**
  * Implements hook_help().
@@ -30,4 +31,33 @@ function leadgen_base_theme() {
   $theme = [];
 
   return $theme;
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function leadgen_base_preprocess_page(&$variables) {
+  if (!empty($variables['node'])) {
+    /* @var $node \Drupal\node\NodeInterface */
+    $node = $variables['node'];
+    if (\Drupal::moduleHandler()->moduleExists('leadgen_layouts')) {
+      if (leadgen_layouts_is_fluid($node) && leadgen_base_has_header_paragraphs($node)) {
+        hide($variables['page']['header']['leadgen_basic_page_title']);
+      }
+    }
+  }
+}
+
+/**
+ * Check if the node has the header_paragraphs field, if so, then check if the
+ * field is not empty. If header paragraphs exist hide the page title.
+ *
+ * @param \Drupal\node\NodeInterface $node
+ *
+ * @return \Drupal\node\NodeInterface
+ */
+function leadgen_base_has_header_paragraphs(NodeInterface $node) {
+  if(!empty($node->field_header_paragraphs) && !$node->field_header_paragraphs->isEmpty()) {
+    return $node;
+  }
 }
