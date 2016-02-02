@@ -1,0 +1,8 @@
+services:
+  leadgen_paragraphs.banner:
+    class: Drupal\leadgen_paragraphs\BannerParagraph
+    arguments: []
+  leadgen_paragraphs.carousel:
+    class: Drupal\leadgen_paragraphs\CarouselParagraph
+    arguments: []
+
