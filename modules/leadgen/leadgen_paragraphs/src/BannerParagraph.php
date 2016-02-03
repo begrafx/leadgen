@@ -8,11 +8,29 @@
 namespace Drupal\leadgen_paragraphs;
 
 use Drupal\image\Entity\ImageStyle;
+use Drupal\Core\Config\ConfigFactoryInterface;
 
 /**
  * Renders a banner paragraph.
  */
 class BannerParagraph implements ParagraphRendererInterface {
+
+  /**
+   * The aggregator.settings config object.
+   *
+   * @var \Drupal\Core\Config\Config
+   */
+  protected $config;
+
+  /**
+   * Constructs an BannerParagraph object.
+   *
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
+   *   The factory for configuration objects.
+   */
+  public function __construct(ConfigFactoryInterface $config_factory) {
+    $this->config = $config_factory->get('leadgen_paragraphs.banner_settings');
+  }
 
   /**
    * {@inheritdoc}
@@ -22,9 +40,15 @@ class BannerParagraph implements ParagraphRendererInterface {
 
     // If banner image and nested paragraphs are present.
     if (!$paragraph->field_image->isEmpty() && !$paragraph->field_paragraphs->isEmpty()) {
-      // Get banner image.
-      $banner_image_uri = $paragraph->field_image->entity->getFileUri();
-      $banner_image = ImageStyle::load('banner')->buildUrl($banner_image_uri);
+      $image_style = $this->config->get('image_style');
+      // Generate image URL.
+      if (!empty($image_style)) {
+        $banner_image_uri = $paragraph->field_image->entity->getFileUri();
+        $banner_image = ImageStyle::load($image_style)->buildUrl($banner_image_uri);
+      }
+      else {
+        $banner_image = $paragraph->field_image->entity->url();
+      }
       // Add image as background.
       $variables['attributes']['style'][] = 'background-image: url("' . $banner_image . '");';
       $variables['attributes']['style'][] = 'background-size: cover;background-position: center center;';

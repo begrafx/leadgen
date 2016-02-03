@@ -1,0 +1,5 @@
+leadgen_paragraphs.banner_settings_form:
+  title: 'Banner paragraph settings'
+  description: 'Configuration for the banner paragraph type.'
+  route_name: leadgen_paragraphs.banner_settings_form
+  parent: system.admin_config_content

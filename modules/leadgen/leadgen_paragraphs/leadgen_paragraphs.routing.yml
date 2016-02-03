@@ -1,0 +1,10 @@
+leadgen_paragraphs.banner_settings_form:
+  path: '/admin/config/leadgen-paragraphs-banner'
+  defaults:
+    _form: '\Drupal\leadgen_paragraphs\Form\BannerSettingsForm'
+    _title: 'Banner Paragraph'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+
