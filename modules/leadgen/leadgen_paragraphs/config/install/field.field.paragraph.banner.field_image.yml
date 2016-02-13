@@ -10,7 +10,7 @@ id: paragraph.banner.field_image
 field_name: field_image
 entity_type: paragraph
 bundle: banner
-label: Image'
+label: Image
 description: ''
 required: false
 translatable: false

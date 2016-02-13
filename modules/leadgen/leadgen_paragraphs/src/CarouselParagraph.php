@@ -7,7 +7,6 @@
 
 namespace Drupal\leadgen_paragraphs;
 
-use Drupal\image\Entity\ImageStyle;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Component\Utility\Unicode;
 
