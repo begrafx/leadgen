@@ -9,6 +9,7 @@ namespace Drupal\leadgen_paragraphs;
 
 use Drupal\image\Entity\ImageStyle;
 use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Component\Utility\Unicode;
 
 /**
  * Renders a Carousel paragraph.
@@ -48,24 +49,44 @@ class CarouselParagraph implements ParagraphRendererInterface {
         }
         if (!$slide_paragraph->field_text->isEmpty()) {
           $item['description'] = [
-            '#markup' => $slide_paragraph->field_text->value,
+            '#type' => 'processed_text',
+            '#text' => $slide_paragraph->field_text->value,
+            '#format' => $slide_paragraph->field_text->format,
           ];
         }
 
         if (!$slide_paragraph->field_image->isEmpty()) {
+          // Get image field.
+          $image_field = $slide_paragraph->field_image;
           $image_style = $this->config->get('image_style');
           // Generate image URL.
           if (!empty($image_style)) {
-            $image_uri = $slide_paragraph->field_image->entity->getFileUri();
-            $image = ImageStyle::load($image_style)->buildUrl($image_uri);
+            $item['image'] = [
+              '#theme' => 'image_style',
+              '#style_name' => $image_style,
+            ];
           }
           else {
-            $image = $slide_paragraph->field_image->entity->url();
+            $item['image'] = [
+              '#theme' => 'image',
+            ];
           }
-          // TODO Should use the theme_image or whatever it's called in D8.
-          $item['image'] = [
-            '#markup' => '<img src="' . $image . '" class="img-responsive center-block" />',
-          ];
+
+          // Do not output an empty 'title' attribute.
+          if (Unicode::strlen($image_field->title) != 0) {
+            $item['image']['#title'] = $image_field->title;
+          }
+
+          if (($entity = $image_field->entity) && empty($image_field->uri)) {
+            $item['image']['#uri'] = $entity->getFileUri();
+          }
+          else {
+            $item['image']['#uri'] = $image_field->uri;
+          }
+
+          foreach (array('width', 'height', 'alt') as $key) {
+            $item['image']["#$key"] = $image_field->$key;
+          }
         }
 
         if (!empty($item)) {
