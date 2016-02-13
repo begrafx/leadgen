@@ -8,11 +8,28 @@
 namespace Drupal\leadgen_paragraphs;
 
 use Drupal\image\Entity\ImageStyle;
+use Drupal\Core\Config\ConfigFactoryInterface;
 
 /**
  * Renders a Carousel paragraph.
  */
 class CarouselParagraph implements ParagraphRendererInterface {
+  /**
+   * The aggregator.settings config object.
+   *
+   * @var \Drupal\Core\Config\Config
+   */
+  protected $config;
+
+  /**
+   * Constructs an BannerParagraph object.
+   *
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
+   *   The factory for configuration objects.
+   */
+  public function __construct(ConfigFactoryInterface $config_factory) {
+    $this->config = $config_factory->get('leadgen_paragraphs.carousel_settings');
+  }
 
   /**
    * {@inheritdoc}
@@ -36,8 +53,15 @@ class CarouselParagraph implements ParagraphRendererInterface {
         }
 
         if (!$slide_paragraph->field_image->isEmpty()) {
-          $image_uri = $slide_paragraph->field_image->entity->getFileUri();
-          $image = ImageStyle::load('banner')->buildUrl($image_uri);
+          $image_style = $this->config->get('image_style');
+          // Generate image URL.
+          if (!empty($image_style)) {
+            $image_uri = $slide_paragraph->field_image->entity->getFileUri();
+            $image = ImageStyle::load($image_style)->buildUrl($image_uri);
+          }
+          else {
+            $image = $slide_paragraph->field_image->entity->url();
+          }
           // TODO Should use the theme_image or whatever it's called in D8.
           $item['image'] = [
             '#markup' => '<img src="' . $image . '" class="img-responsive center-block" />',

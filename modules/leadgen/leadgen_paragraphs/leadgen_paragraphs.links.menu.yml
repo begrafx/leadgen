@@ -3,3 +3,9 @@ leadgen_paragraphs.banner_settings_form:
   description: 'Configuration for the banner paragraph type.'
   route_name: leadgen_paragraphs.banner_settings_form
   parent: system.admin_config_content
+
+leadgen_paragraphs.carousel_settings_form:
+  title: 'Carousel paragraph settings'
+  description: 'Configuration for the carousel paragraph type.'
+  route_name: leadgen_paragraphs.carousel_settings_form
+  parent: system.admin_config_content

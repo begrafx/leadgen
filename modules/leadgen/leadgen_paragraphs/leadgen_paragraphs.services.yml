@@ -4,5 +4,5 @@ services:
     arguments: ['@config.factory']
   leadgen_paragraphs.carousel:
     class: Drupal\leadgen_paragraphs\CarouselParagraph
-    arguments: []
+    arguments: ['@config.factory']
 
