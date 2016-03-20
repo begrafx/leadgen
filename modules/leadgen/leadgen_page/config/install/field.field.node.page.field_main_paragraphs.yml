@@ -23,6 +23,7 @@ settings:
       banner: banner
       carousel: carousel
       text: text
+      tab: tab
     target_bundles_drag_drop:
       banner:
         enabled: true
@@ -36,4 +37,7 @@ settings:
       text:
         enabled: true
         weight: 8
+      tab:
+        enabled: true
+        weight: 9
 field_type: entity_reference_revisions
