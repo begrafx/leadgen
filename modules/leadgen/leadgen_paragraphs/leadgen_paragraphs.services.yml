@@ -5,4 +5,7 @@ services:
   leadgen_paragraphs.carousel:
     class: Drupal\leadgen_paragraphs\CarouselParagraph
     arguments: ['@config.factory']
+  leadgen_paragraphs.tab:
+    class: Drupal\leadgen_paragraphs\TabParagraph
+    arguments: []
 

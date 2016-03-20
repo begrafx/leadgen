@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.tab.field_paragraphs
+    - paragraphs.paragraphs_type.tab
+id: paragraph.tab.default
+targetEntityType: paragraph
+bundle: tab
+mode: default
+content: {  }
+hidden:
+  created: true
+  field_paragraphs: true
+  uid: true

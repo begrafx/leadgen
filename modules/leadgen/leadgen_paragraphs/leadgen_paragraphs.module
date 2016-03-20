@@ -6,6 +6,22 @@
  */
 
 /**
+ * Implements hook_theme().
+ */
+function leadgen_paragraphs_theme() {
+  $theme = [
+    'leadgen_paragraphs_tab' => [
+      'variables' => [
+        'tab_titles' => [],
+        'tab_text' => [],
+      ],
+    ],
+  ];
+
+  return $theme;
+}
+
+/**
  * Implements hook_preprocess_paragraph__banner().
  */
 function leadgen_paragraphs_preprocess_paragraph__banner(&$variables) {
@@ -21,4 +37,13 @@ function leadgen_paragraphs_preprocess_paragraph__carousel(&$variables) {
   /** @var \Drupal\leadgen_paragraphs\CarouselParagraph $carousel_renderer */
   $carousel_renderer = \Drupal::service('leadgen_paragraphs.carousel');
   $carousel_renderer->render($variables);
+}
+
+/**
+ * Implements hook_preprocess_paragraph__tab().
+ */
+function leadgen_paragraphs_preprocess_paragraph__tab(&$variables) {
+  /** @var \Drupal\leadgen_paragraphs\TabParagraph $tab_renderer */
+  $tab_renderer = \Drupal::service('leadgen_paragraphs.tab');
+  $tab_renderer->render($variables);
 }

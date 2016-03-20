@@ -1,0 +1,19 @@
+<div class="dynamic-container">
+  {% if tab_titles %}
+    <ul class="nav nav-tabs" role="tablist">
+      {% for title in tab_titles %}
+        {% set tab_classes = loop.first ? 'active' %}
+        <li role="presentation" class="{{ tab_classes }}"><a href="#{{ title.id }}" aria-controls="{{ title.id }}" role="tab" data-toggle="tab">{{ title.title }}</a></li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>
+
+{% if tab_text %}
+  <div class="tab-content dynamic-container">
+    {% for text in tab_text %}
+      {% set tab_classes = loop.first ? ' active' %}
+      <div role="tabpanel" class="tab-pane{{ tab_classes }}" id="{{ text.id }}">{{ text.text }}</div>
+    {% endfor %}
+  </div>
+{% endif %}
