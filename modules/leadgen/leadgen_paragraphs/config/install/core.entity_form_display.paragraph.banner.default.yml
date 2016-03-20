@@ -6,6 +6,7 @@ dependencies:
     - field.field.paragraph.banner.field_image
     - field.field.paragraph.banner.field_paragraphs
     - field.field.paragraph.banner.field_text_color
+    - image.style.thumbnail
     - paragraphs.paragraphs_type.banner
   module:
     - color_field
@@ -19,9 +20,10 @@ content:
   field_banner_color:
     weight: 1
     settings:
-      default_colors: "#AC725E,#D06B64,#F83A22,#FA573C,#FF7537,#FFAD46\n#42D692,#16A765,#7BD148,#B3DC6C,#FBE983\n#92E1C0,#9FE1E7,#9FC6E7,#4986E7,#9A9CFF\n#B99AFF,#C2C2C2,#CABDBF,#CCA6AC,#F691B2\n#CD74E6,#A47AE2,#000000,#FFFFFF"
+      placeholder_color: ''
+      placeholder_opacity: ''
     third_party_settings: {  }
-    type: color_field_widget_box
+    type: color_field_widget_default
   field_image:
     weight: 0
     settings:
@@ -42,9 +44,10 @@ content:
   field_text_color:
     weight: 2
     settings:
-      default_colors: "#AC725E,#D06B64,#F83A22,#FA573C,#FF7537,#FFAD46\n#42D692,#16A765,#7BD148,#B3DC6C,#FBE983\n#92E1C0,#9FE1E7,#9FC6E7,#4986E7,#9A9CFF\n#B99AFF,#C2C2C2,#CABDBF,#CCA6AC,#F691B2\n#CD74E6,#A47AE2,#000000,#FFFFFF"
+      placeholder_color: ''
+      placeholder_opacity: ''
     third_party_settings: {  }
-    type: color_field_widget_box
+    type: color_field_widget_default
 hidden:
   created: true
   uid: true
