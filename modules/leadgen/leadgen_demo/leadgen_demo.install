@@ -83,6 +83,38 @@ function leadgen_demo_install() {
   ];
   $para_banner_image_multi = leadgen_demo_generate_paragraph('banner', $para_banner_image_multi_values);
 
+  // Create tabs.
+  $para_text_1_values['field_text'] = 'One paragraphs
+    Instead of putting all their content in one WYSIWYG body field including images and videos, end-users can now choose on-the-fly between pre-defined Paragraph Types independent from one another. Paragraph Types can be anything you want from a simple text block or image to a complex and configurable slideshow.';
+  $para_text_1_values['field_title'] = 'tab 1';
+  $para_text_1 = leadgen_demo_generate_paragraph('text', $para_text_1_values);
+
+  $para_text_2_values['field_text'] = 'Two paragraphs
+    Instead of putting all their content in one WYSIWYG body field including images and videos, end-users can now choose on-the-fly between pre-defined Paragraph Types independent from one another. Paragraph Types can be anything you want from a simple text block or image to a complex and configurable slideshow.';
+  $para_text_2_values['field_title'] = 'tab 2';
+  $para_text_2 = leadgen_demo_generate_paragraph('text', $para_text_2_values);
+
+  $para_text_3_values['field_text'] = 'Two paragraphs
+    Instead of putting all their content in one WYSIWYG body field including images and videos, end-users can now choose on-the-fly between pre-defined Paragraph Types independent from one another. Paragraph Types can be anything you want from a simple text block or image to a complex and configurable slideshow.';
+  $para_text_3_values['field_title'] = 'tab 3';
+  $para_text_3 = leadgen_demo_generate_paragraph('text', $para_text_3_values);
+
+  $para_tab_values['field_paragraphs'] = [
+    [
+      'target_id' => $para_text_1->id(),
+      'target_revision_id' => $para_text_1->getRevisionId(),
+    ],
+    [
+      'target_id' => $para_text_2->id(),
+      'target_revision_id' => $para_text_2->getRevisionId(),
+    ],
+    [
+      'target_id' => $para_text_3->id(),
+      'target_revision_id' => $para_text_3->getRevisionId(),
+    ],
+  ];
+  $para_tab = leadgen_demo_generate_paragraph('tab', $para_tab_values);
+
   // Add demo content with two paragraphs.
   $node = Node::create([
     'type' => 'page',
@@ -105,6 +137,10 @@ function leadgen_demo_install() {
       [
         'target_id' => $para_banner_image_multi->id(),
         'target_revision_id' => $para_banner_image_multi->getRevisionId(),
+      ],
+      [
+        'target_id' => $para_tab->id(),
+        'target_revision_id' => $para_tab->getRevisionId(),
       ],
     ],
   ]);
