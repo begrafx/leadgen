@@ -13,10 +13,10 @@ projects[color_field][download][revision] = 9bbbb07f08a28d20a3896ed9b89b00e2afcb
 ; https://www.drupal.org/node/2642712
 projects[color_field][patch][] = https://www.drupal.org/files/issues/fixed-notice-2642712-2.patch
 
-projects[ds][version] = '2.3'
-projects[entity_reference_revisions][version] = '1.0-rc4'
+projects[ds][version] = '2.4'
+projects[entity_reference_revisions][version] = '1.0-rc7'
 projects[layout_plugin][version] = '1.0-alpha22'
-projects[paragraphs][version] = '1.0-rc4'
+projects[paragraphs][version] = '1.0-rc5'
 
 ; Themes
 
