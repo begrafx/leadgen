@@ -8,4 +8,7 @@ services:
   leadgen_paragraphs.tab:
     class: Drupal\leadgen_paragraphs\TabParagraph
     arguments: []
+  leadgen_paragraphs.grid:
+    class: Drupal\leadgen_paragraphs\GridParagraph
+    arguments: []
 

@@ -40,4 +40,7 @@ settings:
       tab:
         enabled: true
         weight: 9
+      grid:
+        weight: 9
+        enabled: true
 field_type: entity_reference_revisions

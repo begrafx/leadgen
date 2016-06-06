@@ -16,6 +16,12 @@ function leadgen_paragraphs_theme() {
         'tab_text' => [],
       ],
     ],
+    'leadgen_paragraphs_grid' => [
+      'variables' => [
+        'items' => [],
+        'col_width' => [],
+      ],
+    ],
   ];
 
   return $theme;
@@ -46,4 +52,13 @@ function leadgen_paragraphs_preprocess_paragraph__tab(&$variables) {
   /** @var \Drupal\leadgen_paragraphs\TabParagraph $tab_renderer */
   $tab_renderer = \Drupal::service('leadgen_paragraphs.tab');
   $tab_renderer->render($variables);
+}
+
+/**
+ * Implements hook_preprocess_paragraph__grid().
+ */
+function leadgen_paragraphs_preprocess_paragraph__grid(&$variables) {
+  /** @var \Drupal\leadgen_paragraphs\GridParagraph $grid_renderer */
+  $grid_renderer = \Drupal::service('leadgen_paragraphs.grid');
+  $grid_renderer->render($variables);
 }

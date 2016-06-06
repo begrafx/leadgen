@@ -2,41 +2,42 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_main_paragraphs
-    - node.type.article
+    - field.storage.paragraph.field_paragraphs
+    - paragraphs.paragraphs_type.grid
   module:
     - entity_reference_revisions
-id: node.article.field_main_paragraphs
-field_name: field_main_paragraphs
-entity_type: node
-bundle: article
-label: 'Main paragraphs'
+id: paragraph.grid.field_paragraphs
+field_name: field_paragraphs
+entity_type: paragraph
+bundle: grid
+label: Paragraphs
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      banner: banner
-      carousel: carousel
       text: text
     target_bundles_drag_drop:
       banner:
-        enabled: true
-        weight: 5
-      carousel:
-        enabled: true
-        weight: 6
-      slide:
         weight: 7
+        enabled: false
+      carousel:
+        weight: 8
+        enabled: false
+      grid:
+        weight: 9
+        enabled: false
+      slide:
+        weight: 10
+        enabled: false
+      tab:
+        weight: 11
         enabled: false
       text:
         enabled: true
-        weight: 8
-      grid:
-        weight: 9
-        enabled: true
+        weight: 12
 field_type: entity_reference_revisions

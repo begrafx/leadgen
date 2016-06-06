@@ -1,0 +1,9 @@
+{% if items %}
+  <div class="dynamic-container">
+    <div class="row">
+    {% for text in items %}
+      <div class="col-md-{{ col_width }}">{{ text.text }}</div>
+    {% endfor %}
+    </div>
+  </div>
+{% endif %}
